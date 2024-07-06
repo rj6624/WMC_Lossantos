@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.logo{
+    font-size: 2em;
+    color: white;
+}
+
+.navigation a{
+    position: relative;
+    font-size: 1.1em;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover::after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: 0.5s;
+}
+
+.navigation .btnLogin-popup:hover{
+    background-color: white;
+    color: black;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("Background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* display: flex; */
+    /* align-items: center; */
+    /* flex-direction: column; */
+    min-height: 100vh;
+    margin: 0;
+}
+
+@font-face {
+    font-family: __gtaFont_3c4894;
+    src: url('/d588a4b4ad7b371e-s.p.otf') format("opentype");
+    font-display: swap
+}
+
+
+.nav-bar{
+    background-color: rgb(255, 255, 255);
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.nav-bar li{
+    list-style-type: none;
+}
+
+.nav-bar a{
+    margin-left: 15px;
+    margin-right: 12px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.card {
+    margin-top: 12px;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+}
+
+.card h2, .card p {
+    margin: 0;
+}
+
+.card.kipon {
+    background: url('city.jpg') no-repeat center/cover;
+}
+
+.card.robotrix {
+    background: url('cars.jpg') no-repeat center/cover;
+}
+
+.card.treasure-box {
+    background: url('maptime.jpg') no-repeat center/cover; /* Replace with the correct path */
+}
+
+.card.explore {
+    background: url('with-car.jpg') no-repeat center/cover;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
