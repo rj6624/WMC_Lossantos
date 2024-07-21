@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Currency Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/PROFILE.css">
+</head>
+<body>
+
+    <section class="fix-back-img">
+        
+    </section>
+
+    <section class="sec-login">
+        <h2 class="logo">
+            Luxury Los Santos
+        </h2>
+
+        <nav class="navigation">
+            <a href="/" method="post" class="lines hideOnMobile">Home</a>
+            <a href="#" class="lines hideOnMobile">Cart</a>
+            
+            <div class="dropdown hideOnMobile">
+                <button class="dropbtn">Category 
+                    <!-- <i class="fa fa-caret-down"></i> -->
+                </button>
+                <div class="dropdown-content">
+                    <a href="/plans" method="post">Plans</a>
+                    <a href="/cars" method="post">Cars</a>
+                    <a href="/penthouses" method="post">Penthouses</a>
+                    <a href="/yatches" method="post">Yachts</a>
+                </div>
+            </div>
+            <button class="btnLogin-popup hideOnMobile">Login</button>
+
+            <a href="/profile" method="post" class="lines hideOnMobile">Profile</a>
+
+            <a href="#" class="last hideOnMobile" onclick=showSidebar()><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 0 448 512" width="26"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></a>
+
+
+            <ul class="sidebar">
+                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 0 384 512" width="26"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Contact</a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">Category 
+                        <!-- <i class="fa fa-caret-down"></i> -->
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="#">Plans</a>
+                        <a href="#">Cars</a>
+                        <a href="#">Penthouses</a>
+                        <a href="#">Yachts</a>
+                    </div>
+                </div>
+                <button class="btnLogin-popup">Login</button>
+            </ul>            
+
+        </nav>
+    </section>
+
+
+    <section class="sec-nav">
+        <h1>Virtual Currency Store</h1>
+        <div class="profile">
+            <span>User: Jay Rupareliya</span>
+            <span>Balance: $<span id="balance">1000</span></span>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </section>
+
+    <section class="hero">
+        <div class="card">
+            <h1>Jay Rupareliya</h1>
+            <p>@RJ</p>
+            <img src="/styles/Assets/profile_placeholder.webp" id="profile-pic">
+            <label for="input-file">Update Image</label>
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file">
+        </div>
+
+        <!-- <div class="card">
+            <h1>Aarchi Kasundra</h1>
+            <p>@AK</p>
+            <img src="/styles/Assets/profile_placeholder.webp" id="profile-pic1">
+            <label for="input-file1">Update Image</label>
+            <input type="file" accept="image/jpeg, image/png, image/jpg" id="input-file1">
+        </div> -->
+
+    </section>
+
+    <main>
+        <section class="currency-management">
+            <h2>Manage Your Currency</h2>
+            <div class="currency-actions">
+                <button class="currency-btn" onclick="addMoney()">Add Money</button>
+                <button class="currency-btn" onclick="withdrawMoney()">Withdraw Money</button>
+            </div>
+        </section>
+        <section class="store">
+            <h2>Store</h2>
+            <div class="items">
+                <div class="item">
+                    <span>Item 1 - $100</span>
+                    <div class="item-actions">
+                        <button class="buy-btn" onclick="buyItem(100, 'Item 1')">Buy</button>
+                        <button class="cart-btn" onclick="addToCart('Item 1')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="item">
+                    <span>Item 2 - $200</span>
+                    <div class="item-actions">
+                        <button class="buy-btn" onclick="buyItem(200, 'Item 2')">Buy</button>
+                        <button class="cart-btn" onclick="addToCart('Item 2')">Add to Cart</button>
+                    </div>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </section>
+        <div class="side-sections">
+            <!-- <section class="cart">
+                <h2>Cart</h2>
+                <ul id="cart-list">
+                    Cart items will be displayed here
+                </ul>
+            </section> -->
+            <section class="purchase-history">
+                <h2>Purchase History</h2>
+                <ul id="history">
+                    <!-- Purchased items will be displayed here -->
+                </ul>
+            </section>
+        </div>
+    </main>
+    <!-- <script src="scripts.js"></script> -->
+
+    <section class="contact-section">
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <h3>Call Us</h3>
+                <p>Free Calls</p>
+                <p>1-800-700-900</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Find Us</h3>
+                <p>Ahmedabad University</p>
+                <p>Ahmedabad, India</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Us</h3>
+                <p>Direct Email</p>
+                <p>mysantos@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+
+let profilePic = document.getElementById("profile-pic");
+let inputFile = document.getElementById("input-file");
+
+inputFile.onchange = function(){
+    profilePic.src = URL.createObjectURL(inputFile.files[0]);
+}
+
+// let profilePic1 = document.getElementById("profile-pic1");
+// let inputFile1 = document.getElementById("input-file1");
+
+// inputFile1.onchange = function(){
+//     profilePic1.src = URL.createObjectURL(inputFile1.files[0]);
+// }
+
+
+let balance = 1000;
+let history = [];
+let cart = [];
+
+function updateBalance() {
+    document.getElementById('balance').innerText = balance;
+}
+
+function addMoney() {
+    let amount = prompt('Enter amount to add:');
+    amount = parseFloat(amount);
+    if (!isNaN(amount) && amount > 0) {
+        balance += amount;
+        updateBalance();
+    } else {
+        alert('Invalid amount');
+    }
+}
+
+function withdrawMoney() {
+    let amount = prompt('Enter amount to withdraw:');
+    amount = parseFloat(amount);
+    if (!isNaN(amount) && amount > 0 && amount <= balance) {
+        balance -= amount;
+        updateBalance();
+    } else {
+        alert('Invalid amount or insufficient balance');
+    }
+}
+
+function buyItem(price, itemName) {
+    if (balance >= price) {
+        balance -= price;
+        updateBalance();
+        history.push(itemName);
+        updateHistory();
+    } else {
+        alert('Insufficient balance');
+    }
+}
+
+function updateHistory() {
+    const historyList = document.getElementById('history');
+    historyList.innerHTML = '';
+    history.forEach(item => {
+        const li = document.createElement('li');
+        li.innerText = item;
+        historyList.appendChild(li);
+    });
+}
+
+function addToCart(itemName) {
+    cart.push(itemName);
+    updateCart();
+}
+
+function removeFromCart(itemName) {
+    cart = cart.filter(item => item !== itemName);
+    updateCart();
+}
+
+function updateCart() {
+    const cartList = document.getElementById('cart-list');
+    cartList.innerHTML = '';
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.innerText = item;
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'remove-btn';
+        removeBtn.innerText = 'Remove';
+        removeBtn.onclick = () => removeFromCart(item);
+        li.appendChild(removeBtn);
+        cartList.appendChild(li);
+    });
+}
+
+function logout() {
+    alert('You have been logged out.');
+    // Implement actual logout functionality here
+}
+
+
+    </script>
+</body>
+</html>
